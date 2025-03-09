@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class KodePos
 {
-
+//init
     private Dictionary<string, string> kodePosTable;
 
     public KodePos()

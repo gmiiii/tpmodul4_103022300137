@@ -38,7 +38,61 @@ public class KodePos
     }
 }
 
+public class DoorMachine
+{
 
+    private enum DoorState
+    {
+        Locked,
+        Unlocked
+    }
+
+
+    private DoorState currentState;
+
+    public DoorMachine()
+    {
+        currentState = DoorState.Locked;
+    }
+
+    public void LockDoor()
+    {
+        if (currentState == DoorState.Unlocked)
+        {
+            currentState = DoorState.Locked;
+            Console.WriteLine("Pintu terkunci");
+        }
+        else
+        {
+            Console.WriteLine("Pintu sudah terkunci");
+        }
+    }
+
+    public void UnlockDoor()
+    {
+        if (currentState == DoorState.Locked)
+        {
+            currentState = DoorState.Unlocked;
+            Console.WriteLine("Pintu tidak terkunci");
+        }
+        else
+        {
+            Console.WriteLine("Pintu sudah terbuka");
+        }
+    }
+
+    public void ChangeState()
+    {
+        if (currentState == DoorState.Locked)
+        {
+            Console.WriteLine("Pintu terkunci");
+        }
+        else if (currentState == DoorState.Unlocked)
+        {
+            Console.WriteLine("Pintu tidak terkunci");
+        }
+    }
+}
 
 public class Program
 {
@@ -57,11 +111,11 @@ public class Program
         DoorMachine door = new DoorMachine();
 
 
-        door.ChangeState(); 
+        door.ChangeState();
         Console.WriteLine();
 
-        door.UnlockDoor(); 
+        door.UnlockDoor();
 
-        door.LockDoor();  
+        door.LockDoor();
     }
 }
